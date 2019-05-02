@@ -5,38 +5,42 @@
     <title>4 em linhas</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="estilo/estilo.css" type="text/css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
 </head>
 
 <body>
-
-    <div class="formato-index">
-        <div id="container-index">
-                <img class="img" src="img/logo.png" width="300px" height="300px">
-                
+<div class="modal-paginaPrincipal">
+    <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-3">
+                        <img class="mb-2 img-fluid" src="img/logo.png" width="250px" height="265px" alt="logo">
+                    </div> 
+                </div>
             </div>
-        
-            <div id="container-conteudo">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h4>Selecione o nível de dificuldade</h4>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="btn-toolbar posicaoNivel" role="toolbar" aria-label="Toolbar with button groups">
-                            <div class="btn-group" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-secondary corButton">1</button>
-                                <button type="button" class="btn btn-secondary corButton">2</button>
-                                <button type="button" class="btn btn-secondary corButton">3</button>
+
+            <div class="row">
+                <div class="col-12">
+                        <h4 class="text-center mb-3">SELECIONE O NÍVEL DE DIFICULDADE</h4>
+                        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group formato-button btn-group-lg" role="group" aria-label="First group">
+                                <button type="button" class="btn btn-secondary corButton">Fácil</button>
+                                <button type="button" class="btn btn-secondary corButton">Médio</button>
+                                <button type="button" class="btn btn-secondary corButton">Difícil</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <button type="button" class="btn btn-success">Iniciar Partida</button>
-                    </div>    
                 </div>
-                
-        
+
             </div>
-    </div>
+
+            <div class="row">
+                <div class="col-12 formato-button">
+                    <button type="button" class="btn btn-primary cor-button-jogar">Jogar</button>   
+                </div>
+            </div>
+        </div>
+</div>
+    
     
 
 <script src="bootstrap/js/jquery-3.2.1.min.js"></script>
