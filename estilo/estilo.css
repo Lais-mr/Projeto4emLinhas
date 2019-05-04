@@ -104,7 +104,7 @@ h4{
 }
 
 .formato-versus{
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -116,7 +116,7 @@ h4{
 .container-cabecalho{
     margin: 0 auto;
     /* border:1px solid red; */
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 600px) {
