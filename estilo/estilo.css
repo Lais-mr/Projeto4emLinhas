@@ -38,12 +38,12 @@ body{
 
 .line-1 div:nth-child(n)  {
     background: #008e97;
-    color: #008e97;
+    color: #fff;
 }
 
 .line-2 div:nth-child(n)  {
     background: #008e97;
-    color: #008e97;
+    color: #fff;
 }
 
 h2{
