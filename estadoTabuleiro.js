@@ -17,7 +17,7 @@ class EstadoTabuleiro{
     realizarJogada(jogador, i, j) 
     {
         acao = [i,j];
-        tabuleiro[i][j] = jogador;     
+        matrizTabuleiro[i][j] = jogador;     
     }
 
     setMelhorAcao(i, j) {
