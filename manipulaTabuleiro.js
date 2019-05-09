@@ -1,5 +1,9 @@
-var jogador = 1;
+var jogadorAtual = 1 // quem comeca jogar é sempre o X
+var jogador = 1; 
 var guardaUltimoJogador = 1;
+
+//JOGADOR 1 = X -> Usuario
+//JOGADOR 2 = O -> IA
 
 //matriz utilizada para verificar ganhador
 matrizTabuleiro = [
@@ -13,26 +17,44 @@ matrizTabuleiro = [
     [0,0,0,0,0,0,0,0]
 ];
 
+//Objeto EstadoTabuleiro
+let objEstado = new EstadoTabuleiro();
+
 // Função para realizar as jogas
 $('#container div.rowT div').click(function(){
 
-    
-    
     // Captura o ID da posição da peça
     var id = $(this).attr('id');
     //console.log(id);
 
+    //if utilizado para verificar que coluna o usuario clicou
     if(id == 1 || id == 9 || id == 17 || id == 25 || id == 33 || id == 41 || id == 49 || id == 57){
-        //console.log(id);
         for (let i = 57; i > 0; i = i - 8) {
             var j = i.toString();
-            console.log(j);
             if(document.getElementById(j).textContent == ""){
-                setPosicaoJogador(i,jogador);
-                if(jogador == 1){
+                
+                if(jogadorAtual == 1){
+                    setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
+                    //novo
+                    
+                    //let e = objEstado.clonar();
+                    //let ia = new MiniMax(e);
+                    //let m = ia.melhorJogado();
+                    //jogadorAtual = 2;
+                    //objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
+                    //let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
+                    //setPosicaoJogador(calculaId,jogadorAtual);
+                    //jogadorAtual = 1;
+                    
+
+                    //antigo
                     guardaUltimoJogador = 1;
                     jogador = 2;
                 }else{
+                    //novo
+                    //setPosicaoJogador(i,jogador);
+                    //jogadorAtual = 1;
+                    //antigo
                     guardaUltimoJogador = 2;
                     jogador = 1;
                 }
