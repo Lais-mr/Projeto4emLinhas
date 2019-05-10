@@ -28,10 +28,11 @@ body{
     float: left;
     width: 70px;
     height: 70px;
-    border-left: 1.5px solid #ff8c00;
-    border-right: 1.5px solid #ff8c00;
-    border-bottom: 1.5px solid #ff8c00;
-    border-top: 1.5px solid #ff8c00;
+    border-left: 4px solid #ff8c00;
+    border-right: 4px solid #ff8c00;
+    border-bottom: 4px solid #ff8c00;
+    border-top: 4px solid #ff8c00;
+    border-radius: 50%;
     text-align: center;
 }
 
@@ -41,10 +42,10 @@ body{
     color: #fff;
 }
 
-.line-2 div:nth-child(n)  {
+/* .line-2 div:nth-child(n)  {
     background: #008e97;
     color: #fff;
-}
+} */
 
 h2{
     font-family: Roboto;

@@ -5,56 +5,61 @@ class MiniMax{
         this.estado = estado;
     }
 
-    melhorJogada(){
-        return MiniMax(this.estado);
+    minimax(estado){
+
+        let melhorJogada = this.max(estado);
+        return melhorJogada.melhorAcao;
+
     }
 
-    minimax(estado){
-        melhorJogada = max(estado);
-        return melhorJogada.getMelhorAcao();
+    melhorJogada(){
+        return this.minimax(this.estado);
     }
 
     max(estado){
-        possivelVencedor = estado.determinarVencedor();
+        let possivelVencedor = estado.determinarVencedor();
+        //console.log(possivelVencedor);
         if(possivelVencedor != -2){
-            estado.minimax(possivelVencedor);
+            estado.miniMax(possivelVencedor);
             return estado;
         }
 
-        novosEstados = [];
+        let novosEstados = [];
         novosEstados = estado.filhos(2);
-        max = Number.MIN_VALUE;
-        melhor = null;
+        console.log(novosEstados);
+        let max = Number.MIN_VALUE;
+        let melhor = null;
         for (let i = 0; i < novosEstados.length; i++) {
-            filho = novosEstados[i];
-            possivelMelhor = min(filho);
+            console.log("teste");
+            let filho = novosEstados[i];
+            possivelMelhor = this.min(filho);
             if(possivelMelhor.miniMax() > max){
                 melhor = possivelMelhor;
                 max = possivelMelhor.miniMax();
             }          
         }
-
-        estado.melhorAcao(melhor.acao[0],melhor.acao[1]);
-        estado.miniMax(max);
+        console.log("cheguei aq");
+        estado.melhorAcao = melhor;
+        estado.miniMax = max;
         return estado;
     }
 
     min(estado){
-        possivelVencedor  = estado.determinarVencedor();  
+        let possivelVencedor  = estado.determinarVencedor();  
         if(possivelVencedor != -2){
             estado.miniMax(possivelVencedor);
             return estado;
         }      
 
-        novosEstados = [];
+        let novosEstados = [];
         novosEstados = estado.filhos(1);
-        min = Number.MAX_VALUE;
-        melhor = null;
+        let min = Number.MAX_VALUE;
+        let melhor = null;
 
         for (let i = 0; i < novosEstados.length; i++) {
             filho = novosEstados[i];
 
-            possivelMelhor = max(filho);
+            possivelMelhor = this.max(filho);
             if(possivelMelhor.miniMax() < min){
                 melhor = possivelMelhor;
                 min = possivelMelhor.miniMax();
@@ -62,8 +67,8 @@ class MiniMax{
             
         }
 
-        estado.melhorAcao(melhor.acao[0],melhor.acao[1]);
-        estado.miniMax(min);
+        estado.melhorAcao = melhor;
+        estado.miniMax = min;
         return estado;
     }
 

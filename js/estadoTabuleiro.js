@@ -12,28 +12,33 @@ class EstadoTabuleiro{
 
     minimax = 0;
     acao = [];
-    melhorAcao = [];
+    melhorAcao = [-1,-1];
+
+    constructor(){
+        
+    }
 
     realizarJogada(jogador, i, j) 
     {
-        acao = [i,j];
-        matrizTabuleiro[i][j] = jogador;     
+        this.acao = [i,j];
+        matrizTabuleiro[i][j] = jogador;
+        return true;     
     }
 
-    set melhorAcao(i, j) {
-        melhorAcao = [i,j];
+    set melhorAcao(melhorAcao) {
+        this.melhorAcao = [melhorAcao[0],melhorAcao[1]];
     }
 
     get melhorAcao() {
         return this.melhorAcao;
     }
 
-    set acao(i, j) {
-        acao = [i,j];
+    set acao(acao) {
+        this.acao = [acao[0],acao[1]];
     }
     
     set miniMax(valor) {
-        minimax = valor;
+        this.minimax = valor;
     }
     get miniMax() {
         return this.minimax;
@@ -43,14 +48,14 @@ class EstadoTabuleiro{
         return this.acao;
     }
 
-    get filhos(jogador) 
+    filhos(jogador) 
     {
-        filhos = [];
+        let filhos = [];
         for(let i = 0; i < this.matrizTabuleiro.length; i++) 
         {
             for(let j =0; j < this.matrizTabuleiro.length; j++) 
             {
-                e = clonar();
+                let e = this.clonar();
                 if(e.realizarJogada(jogador, i, j)) 
                 {
                     filhos.push(e);
@@ -62,7 +67,7 @@ class EstadoTabuleiro{
 
     clonar() 
     {
-       clone = new EstadoTabuleiro();
+       let clone = new EstadoTabuleiro();
         for(let i = 0; i < this.matrizTabuleiro.length; ++i) 
         {
             for(let j = 0; j < this.matrizTabuleiro.length; ++j) 
