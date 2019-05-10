@@ -20,30 +20,30 @@ class EstadoTabuleiro{
         matrizTabuleiro[i][j] = jogador;     
     }
 
-    setMelhorAcao(i, j) {
+    set melhorAcao(i, j) {
         melhorAcao = [i,j];
     }
 
-    getMelhorAcao() {
+    get melhorAcao() {
         return this.melhorAcao;
     }
 
-    setAcao(i, j) {
+    set acao(i, j) {
         acao = [i,j];
     }
     
-    setMiniMax(valor) {
+    set miniMax(valor) {
         minimax = valor;
     }
-    getMiniMax() {
+    get miniMax() {
         return this.minimax;
     }
     
-    getAcao(){
+    get acao(){
         return this.acao;
     }
 
-    getFilhos(jogador) 
+    get filhos(jogador) 
     {
         filhos = [];
         for(let i = 0; i < this.matrizTabuleiro.length; i++) 

@@ -38,53 +38,21 @@ $('#container div.rowT div').click(function(){
                 
                 if(jogadorAtual == 1){
                     setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
-                    //novo
-                    
-                    //let e = objEstado.clonar();
-                    //let ia = new MiniMax(e);
-                    //let m = ia.melhorJogado();
-                    //jogadorAtual = 2;
-                    //objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
-                    //let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
-                    //setPosicaoJogador(calculaId,jogadorAtual);
-                    //jogadorAtual = 1;
-                    
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    let e = objEstado.clonar();
+                    let ia = new MiniMax(e);
+                    let m = ia.melhorJogado();
+                    jogadorAtual = 2;
+                    objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
+                    let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
+                    setPosicaoJogador(calculaId,jogadorAtual);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
 
-                    //antigo
-                    guardaUltimoJogador = 1;
-                    jogador = 2;
                 }else{
-                    //novo
-                    //setPosicaoJogador(i,jogador);
-                    //jogadorAtual = 1;
-                    //antigo
-                    guardaUltimoJogador = 2;
-                    jogador = 1;
-                }
-
-                if(j == 57){
-                    matrizTabuleiro[7][0] = guardaUltimoJogador;
-                }
-                else if(j == 49){
-                    matrizTabuleiro[6][0] = guardaUltimoJogador;
-                }
-                else if(j == 41){
-                    matrizTabuleiro[5][0] = guardaUltimoJogador;
-                }
-                else if(j == 33){
-                    matrizTabuleiro[4][0] = guardaUltimoJogador;
-                }
-                else if(j == 25){
-                    matrizTabuleiro[3][0] = guardaUltimoJogador;
-                }
-                else if(j == 17){
-                    matrizTabuleiro[2][0] = guardaUltimoJogador;
-                }
-                else if(j == 9){
-                    matrizTabuleiro[1][0] = guardaUltimoJogador;
-                }
-                else if(j == 1){
-                    matrizTabuleiro[0][0] = guardaUltimoJogador;
+                    setPosicaoJogador(i,jogador);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
                 }
                 break;
             }
@@ -93,38 +61,26 @@ $('#container div.rowT div').click(function(){
         for (let i = 58; i > 0; i = i - 8) {
             var j = i.toString();
             if(document.getElementById(j).textContent == ""){
-                setPosicaoJogador(i,jogador);
-                if(jogador == 1){
-                    guardaUltimoJogador = 1;
-                    jogador = 2;
-                }else{
-                    guardaUltimoJogador = 2;
-                    jogador = 1;
-                }
+                let posI = calculaPosicao(j)[0];
+                let posJ = calculaPosicao(j)[1];
+                
+                if(jogadorAtual == 1){
+                    setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    let e = objEstado.clonar();
+                    let ia = new MiniMax(e);
+                    let m = ia.melhorJogado();
+                    jogadorAtual = 2;
+                    objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
+                    let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
+                    setPosicaoJogador(calculaId,jogadorAtual);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
 
-                if(j == 58){
-                    matrizTabuleiro[7][1] = guardaUltimoJogador;
-                }
-                else if(j == 50){
-                    matrizTabuleiro[6][1] = guardaUltimoJogador;
-                }
-                else if(j == 42){
-                    matrizTabuleiro[5][1] = guardaUltimoJogador;
-                }
-                else if(j == 34){
-                    matrizTabuleiro[4][1] = guardaUltimoJogador;
-                }
-                else if(j == 26){
-                    matrizTabuleiro[3][1] = guardaUltimoJogador;
-                }
-                else if(j == 18){
-                    matrizTabuleiro[2][1] = guardaUltimoJogador;
-                }
-                else if(j == 10){
-                    matrizTabuleiro[1][1] = guardaUltimoJogador;
-                }
-                else if(j == 2){
-                    matrizTabuleiro[0][1] = guardaUltimoJogador;
+                }else{
+                    setPosicaoJogador(i,jogador);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
                 }
                 break;
             }
@@ -133,38 +89,26 @@ $('#container div.rowT div').click(function(){
         for (let i = 59; i > 0; i = i - 8) {
             var j = i.toString();
             if(document.getElementById(j).textContent == ""){
-                setPosicaoJogador(i,jogador);
-                if(jogador == 1){
-                    guardaUltimoJogador = 1;
-                    jogador = 2;
-                }else{
-                    guardaUltimoJogador = 2;
-                    jogador = 1;
-                }
+                let posI = calculaPosicao(j)[0];
+                let posJ = calculaPosicao(j)[1];
+                
+                if(jogadorAtual == 1){
+                    setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    let e = objEstado.clonar();
+                    let ia = new MiniMax(e);
+                    let m = ia.melhorJogado();
+                    jogadorAtual = 2;
+                    objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
+                    let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
+                    setPosicaoJogador(calculaId,jogadorAtual);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
 
-                if(j == 59){
-                    matrizTabuleiro[7][2] = guardaUltimoJogador;
-                }
-                else if(j == 51){
-                    matrizTabuleiro[6][2] = guardaUltimoJogador;
-                }
-                else if(j == 43){
-                    matrizTabuleiro[5][2] = guardaUltimoJogador;
-                }
-                else if(j == 35){
-                    matrizTabuleiro[4][2] = guardaUltimoJogador;
-                }
-                else if(j == 27){
-                    matrizTabuleiro[3][2] = guardaUltimoJogador;
-                }
-                else if(j == 19){
-                    matrizTabuleiro[2][2] = guardaUltimoJogador;
-                }
-                else if(j == 11){
-                    matrizTabuleiro[1][2] = guardaUltimoJogador;
-                }
-                else if(j == 3){
-                    matrizTabuleiro[0][2] = guardaUltimoJogador;
+                }else{
+                    setPosicaoJogador(i,jogador);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
                 }
                 break;
             }
@@ -173,38 +117,26 @@ $('#container div.rowT div').click(function(){
         for (let i = 60; i > 0; i = i - 8) {
             var j = i.toString();
             if(document.getElementById(j).textContent == ""){
-                setPosicaoJogador(i,jogador);
-                if(jogador == 1){
-                    guardaUltimoJogador = 1;
-                    jogador = 2;
-                }else{
-                    guardaUltimoJogador = 2;
-                    jogador = 1;
-                }
+                let posI = calculaPosicao(j)[0];
+                let posJ = calculaPosicao(j)[1];
+                
+                if(jogadorAtual == 1){
+                    setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    let e = objEstado.clonar();
+                    let ia = new MiniMax(e);
+                    let m = ia.melhorJogado();
+                    jogadorAtual = 2;
+                    objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
+                    let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
+                    setPosicaoJogador(calculaId,jogadorAtual);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
 
-                if(j == 60){
-                    matrizTabuleiro[7][3] = guardaUltimoJogador;
-                }
-                else if(j == 52){
-                    matrizTabuleiro[6][3] = guardaUltimoJogador;
-                }
-                else if(j == 44){
-                    matrizTabuleiro[5][3] = guardaUltimoJogador;
-                }
-                else if(j == 36){
-                    matrizTabuleiro[4][3] = guardaUltimoJogador;
-                }
-                else if(j == 28){
-                    matrizTabuleiro[3][3] = guardaUltimoJogador;
-                }
-                else if(j == 20){
-                    matrizTabuleiro[2][3] = guardaUltimoJogador;
-                }
-                else if(j == 12){
-                    matrizTabuleiro[1][3] = guardaUltimoJogador;
-                }
-                else if(j == 4){
-                    matrizTabuleiro[0][3] = guardaUltimoJogador;
+                }else{
+                    setPosicaoJogador(i,jogador);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
                 }
                 break;
             }
@@ -213,38 +145,26 @@ $('#container div.rowT div').click(function(){
         for (let i = 61; i > 0; i = i - 8) {
             var j = i.toString();
             if(document.getElementById(j).textContent == ""){
-                setPosicaoJogador(i,jogador);
-                if(jogador == 1){
-                    guardaUltimoJogador = 1;
-                    jogador = 2;
-                }else{
-                    guardaUltimoJogador = 2;
-                    jogador = 1;
-                }
+                let posI = calculaPosicao(j)[0];
+                let posJ = calculaPosicao(j)[1];
+                
+                if(jogadorAtual == 1){
+                    setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    let e = objEstado.clonar();
+                    let ia = new MiniMax(e);
+                    let m = ia.melhorJogado();
+                    jogadorAtual = 2;
+                    objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
+                    let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
+                    setPosicaoJogador(calculaId,jogadorAtual);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
 
-                if(j == 61){
-                    matrizTabuleiro[7][4] = guardaUltimoJogador;
-                }
-                else if(j == 53){
-                    matrizTabuleiro[6][4] = guardaUltimoJogador;
-                }
-                else if(j == 45){
-                    matrizTabuleiro[5][4] = guardaUltimoJogador;
-                }
-                else if(j == 37){
-                    matrizTabuleiro[4][4] = guardaUltimoJogador;
-                }
-                else if(j == 29){
-                    matrizTabuleiro[3][4] = guardaUltimoJogador;
-                }
-                else if(j == 21){
-                    matrizTabuleiro[2][4] = guardaUltimoJogador;
-                }
-                else if(j == 13){
-                    matrizTabuleiro[1][4] = guardaUltimoJogador;
-                }
-                else if(j == 5){
-                    matrizTabuleiro[0][4] = guardaUltimoJogador;
+                }else{
+                    setPosicaoJogador(i,jogador);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
                 }
                 break;
             }
@@ -253,38 +173,26 @@ $('#container div.rowT div').click(function(){
         for (let i = 62; i > 0; i = i - 8) {
             var j = i.toString();
             if(document.getElementById(j).textContent == ""){
-                setPosicaoJogador(i,jogador);
-                if(jogador == 1){
-                    guardaUltimoJogador = 1;
-                    jogador = 2;
-                }else{
-                    guardaUltimoJogador = 2;
-                    jogador = 1;
-                }
+                let posI = calculaPosicao(j)[0];
+                let posJ = calculaPosicao(j)[1];
+                
+                if(jogadorAtual == 1){
+                    setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    let e = objEstado.clonar();
+                    let ia = new MiniMax(e);
+                    let m = ia.melhorJogado();
+                    jogadorAtual = 2;
+                    objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
+                    let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
+                    setPosicaoJogador(calculaId,jogadorAtual);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
 
-                if(j == 62){
-                    matrizTabuleiro[7][5] = guardaUltimoJogador;
-                }
-                else if(j == 54){
-                    matrizTabuleiro[6][5] = guardaUltimoJogador;
-                }
-                else if(j == 46){
-                    matrizTabuleiro[5][5] = guardaUltimoJogador;
-                }
-                else if(j == 38){
-                    matrizTabuleiro[4][5] = guardaUltimoJogador;
-                }
-                else if(j == 30){
-                    matrizTabuleiro[3][5] = guardaUltimoJogador;
-                }
-                else if(j == 22){
-                    matrizTabuleiro[2][5] = guardaUltimoJogador;
-                }
-                else if(j == 14){
-                    matrizTabuleiro[1][5] = guardaUltimoJogador;
-                }
-                else if(j == 6){
-                    matrizTabuleiro[0][5] = guardaUltimoJogador;
+                }else{
+                    setPosicaoJogador(i,jogador);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
                 }
                 break;
             }
@@ -293,38 +201,26 @@ $('#container div.rowT div').click(function(){
         for (let i = 63; i > 0; i = i - 8) {
             var j = i.toString();
             if(document.getElementById(j).textContent == ""){
-                setPosicaoJogador(i,jogador);
-                if(jogador == 1){
-                    guardaUltimoJogador = 1;
-                    jogador = 2;
-                }else{
-                    guardaUltimoJogador = 2;
-                    jogador = 1;
-                }
+                let posI = calculaPosicao(j)[0];
+                let posJ = calculaPosicao(j)[1];
+                
+                if(jogadorAtual == 1){
+                    setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    let e = objEstado.clonar();
+                    let ia = new MiniMax(e);
+                    let m = ia.melhorJogado();
+                    jogadorAtual = 2;
+                    objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
+                    let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
+                    setPosicaoJogador(calculaId,jogadorAtual);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
 
-                if(j == 63){
-                    matrizTabuleiro[7][6] = guardaUltimoJogador;
-                }
-                else if(j == 55){
-                    matrizTabuleiro[6][6] = guardaUltimoJogador;
-                }
-                else if(j == 47){
-                    matrizTabuleiro[5][6] = guardaUltimoJogador;
-                }
-                else if(j == 39){
-                    matrizTabuleiro[4][6] = guardaUltimoJogador;
-                }
-                else if(j == 31){
-                    matrizTabuleiro[3][6] = guardaUltimoJogador;
-                }
-                else if(j == 23){
-                    matrizTabuleiro[2][6] = guardaUltimoJogador;
-                }
-                else if(j == 15){
-                    matrizTabuleiro[1][6] = guardaUltimoJogador;
-                }
-                else if(j == 7){
-                    matrizTabuleiro[0][6] = guardaUltimoJogador;
+                }else{
+                    setPosicaoJogador(i,jogador);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
                 }
                 break;
             }
@@ -334,38 +230,26 @@ $('#container div.rowT div').click(function(){
         for (let i = 64; i > 0; i = i - 8) {
             var j = i.toString();
             if(document.getElementById(j).textContent == ""){
-                setPosicaoJogador(i,jogador);
-                if(jogador == 1){
-                    guardaUltimoJogador = 1;
-                    jogador = 2;
-                }else{
-                    guardaUltimoJogador = 2;
-                    jogador = 1;
-                }
+                let posI = calculaPosicao(j)[0];
+                let posJ = calculaPosicao(j)[1];
+                
+                if(jogadorAtual == 1){
+                    setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    let e = objEstado.clonar();
+                    let ia = new MiniMax(e);
+                    let m = ia.melhorJogado();
+                    jogadorAtual = 2;
+                    objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
+                    let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
+                    setPosicaoJogador(calculaId,jogadorAtual);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
 
-                if(j == 64){
-                    matrizTabuleiro[7][7] = guardaUltimoJogador;
-                }
-                else if(j == 56){
-                    matrizTabuleiro[6][7] = guardaUltimoJogador;
-                }
-                else if(j == 48){
-                    matrizTabuleiro[5][7] = guardaUltimoJogador;
-                }
-                else if(j == 40){
-                    matrizTabuleiro[4][7] = guardaUltimoJogador;
-                }
-                else if(j == 32){
-                    matrizTabuleiro[3][7] = guardaUltimoJogador;
-                }
-                else if(j == 24){
-                    matrizTabuleiro[2][7] = guardaUltimoJogador;
-                }
-                else if(j == 16){
-                    matrizTabuleiro[1][7] = guardaUltimoJogador;
-                }
-                else if(j == 8){
-                    matrizTabuleiro[0][7] = guardaUltimoJogador;
+                }else{
+                    setPosicaoJogador(i,jogador);
+                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    jogadorAtual = 1;
                 }
                 break;
             }
@@ -428,723 +312,6 @@ function printaMatriz(){
         
     }
     
-}
-
-function determinarVencedor() {
-    var jogador = -1; 
-    var contador = 3; // variavel utilizada para contar peças iguais
-    var testadiagonal = 0;
-
-
-    for(let i = 0; i < matrizTabuleiro.length; ++i) 
-    {
-        for(let j = 0; j < matrizTabuleiro.length; ++j) 
-        {
-            //verifica se na posicao do tabuleiro existe alguma peca
-            if(matrizTabuleiro[i][j] != 0)
-            {
-                jogador = matrizTabuleiro[i][j];
-
-                if(j < 3)
-                {
-                    if(i < 3)
-                    {
-                        //verifica ganhador na vertical abaixo
-                        contador = 3;
-                        for(let z = (i + 1); z < matrizTabuleiro.length; z++)
-                        {
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-                        }
-                        
-
-                        //verifica ganhador na horizontal direita
-                        contador = 3;
-                        for(let z = (j + 1); z < 4; z++)
-                        {
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-                        } 
-                        
-                        
-                        //verifica ganhador na diagonal principal abaixo
-                        contador = 3;
-                        testadiagonal = (j+1);
-                        for(let z = (i+1); z < matrizTabuleiro.length; z++)
-                        {
-                            if(matrizTabuleiro[z][testadiagonal++] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if (contador == 0) 
-                            {
-                                return jogador;
-                            }
-
-                        }
-                    }
-                    else if(i == 3 || i == 4)
-                    {
-                        //verifica ganhador na vertical abaixo
-                        contador = 3;
-                        for(let z = (i + 1); z < matrizTabuleiro.length; z++)
-                        {
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }    
-                            
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-                        }
-                        
-                        
-                        //verifica ganhador na vertical a cima
-                        contador = 3;
-                        for(let z = (i - 1); z >= 0; z--)
-                        {
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }    
-                            
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-                        }
-                        
-                        //verifica ganhador na horizontal direita
-
-                        contador = 3;
-                        for(let z = (j + 1); z < matrizTabuleiro.length; z++)
-                        {
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }    
-                            
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-                        } 
-
-                        //verifica ganhador na diagonal principal abaixo
-
-                        contador = 3;
-                        testadiagonal = (j+1);
-                        for(let z = (i+1); z < matrizTabuleiro.length; z++)
-                        {
-                            if(matrizTabuleiro[z][testadiagonal++] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }    
-                            
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-
-                        }
-
-                        //verifica ganhador na diagonal principal para cima
-                        contador = 3;
-                        testadiagonal = (j+1);
-                        for(let z = (i-1); z >= 0; z--)
-                        {
-                            if(matrizTabuleiro[z][testadiagonal++] == jogador)
-                            {
-                                contador--;
-                            }
-
-                        }
-                    }
-                    else
-                    {
-                        console.log('entrou');
-                        //console.log(jogador);
-                        //verifica ganhador na vertical a cima
-                        contador = 3;
-                        for(let z = (i - 1); z >= 0; z--)
-                        {
-                            console.log('verifica veritical cima');
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }
-                            else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-                        }
-                        
-                        //verifica ganhador na horizontal direita
-                        contador = 3;
-                        for(let z = (j + 1); z < matrizTabuleiro.length; z++)
-                        {
-                            
-                            console.log('verifica horizintal direita');
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                                console.log(contador);
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-                        } 
-                        
-                        
-                        //verifica ganhador na diagonal principal para cima
-                        contador = 3;
-                        testadiagonal = (j+1);
-                        
-                        for(let z = (i-1); z >= 0; z--)
-                        {
-                            console.log('verifica diagonal cima');
-                            if(matrizTabuleiro[z][testadiagonal++] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-                        }
-                    }
-                }
-                else if(j == 4 || j == 3){
-                    
-                    if(i<3){
-                        //verifica horizontal esquerda
-                        contador = 3;
-                        for (let z = (j - 1); z >= 0; z--){
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica horizontal direita
-                        contador = 3;
-                        for (let z = (j + 1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal abaixo esquerda
-                        contador = 3;
-                        testadiagonal = (j-1);
-                        for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[z][testadiagonal--] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal abaixo direita
-                        contador = 3;
-                        testadiagonal = (j+1);
-                        for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[z][testadiagonal++] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica vertical abaixo
-                        contador = 3;
-                        for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-                    }else if(i == 3 || i == 4){
-                        //verifica horizontal esquerda
-                        contador = 3;
-                        for (let z = (j - 1); z >= 0; z--){
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica horizontal direita
-                        contador = 3;
-                        for (let z = (j + 1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal abaixo esquerda
-                        contador = 3;
-                        testadiagonal = (j-1);
-                        for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[z][testadiagonal--] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal abaixo direita
-                        contador = 3;
-                        testadiagonal = (j+1);
-                        for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[z][testadiagonal++] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica vertical abaixo
-                        contador = 3;
-                        for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica vertical acima
-                        contador = 3;
-                        for (let z = (i-1); z >= 0; z--){
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal acima esquerda
-                        contador = 3;
-                        testadiagonal = (j-1);
-                        for (let z = (i-1); z >= 0; z--){
-                            if(matrizTabuleiro[z][testadiagonal--] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal acima direita
-                        contador = 3;
-                        testadiagonal = (j+1);
-                        for (let z = (i-1); z >= 0; z--){
-                            if(matrizTabuleiro[z][testadiagonal++] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-                    }else{
-                        //verifica ganhador na vertical a cima
-                        contador = 3;
-                        for(let z = (i - 1); z >= 0; z--)
-                        {
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }    
-                            
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-                        }
-                        
-                        //verifica ganhador na horizontal direita
-
-                        contador = 3;
-                        for(let z = (j + 1); z < matrizTabuleiro.length; z++)
-                        {
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }    
-                            
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }
-                        } 
-
-                        //verifica horizontal esquerda
-                        contador = 3;
-                        for (let z = (j - 1); z >= 0; z--){
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal acima esquerda
-                        contador = 3;
-                        testadiagonal = (j-1);
-                        for (let z = (i-1); z >= 0; z--){
-                            if(matrizTabuleiro[z][testadiagonal--] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal acima direita
-                        contador = 3;
-                        testadiagonal = (j+1);
-                        for (let z = (i-1); z >= 0; z--){
-                            if(matrizTabuleiro[z][testadiagonal++] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-                    }
-                }else{
-                    if(i<3){
-                        //verifica horizontal esquerda
-                        contador = 3;
-                        for (let z = (j - 1); z >= 0; z--){
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal abaixo esquerda
-                        contador = 3;
-                        testadiagonal = (j-1);
-                        for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[z][testadiagonal--] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica vertical abaixo
-                        contador = 3;
-                        for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-                    }else if(i == 3 || i == 4){
-                        //verifica vertical abaixo
-                        contador = 3;
-                        for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                         //verifica vertical acima
-                         contador = 3;
-                         for (let z = (i-1); z >= 0; z--){
-                             if(matrizTabuleiro[z][j] == jogador)
-                             {
-                                 contador--;
-                             }else{
-                                 break;
-                             }
- 
-                             if(contador == 0)
-                             {
-                                 return jogador;
-                             }                    
-                         }
-
-                         //verifica horizontal esquerda
-                        contador = 3;
-                        for (let z = (j - 1); z >= 0; z--){
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal abaixo esquerda
-                        contador = 3;
-                        testadiagonal = (j-1);
-                        for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                            if(matrizTabuleiro[z][testadiagonal--] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica diagonal acima esquerda
-                        contador = 3;
-                        testadiagonal = (j-1);
-                        for (let z = (i-1); z >= 0; z--){
-                            if(matrizTabuleiro[z][testadiagonal--] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-                    }else{
-                        //verifica diagonal acima esquerda
-                        contador = 3;
-                        testadiagonal = (j-1);
-                        for (let z = (i-1); z >= 0; z--){
-                            if(matrizTabuleiro[z][testadiagonal--] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica horizontal esquerda
-                        contador = 3;
-                        for (let z = (j - 1); z >= 0; z--){
-                            if(matrizTabuleiro[i][z] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-
-                        //verifica vertical acima
-                        contador = 3;
-                        for (let z = (i-1); z >= 0; z--){
-                            if(matrizTabuleiro[z][j] == jogador)
-                            {
-                                contador--;
-                            }else{
-                                break;
-                            }
-
-                            if(contador == 0)
-                            {
-                                return jogador;
-                            }                    
-                        }
-                    }
-                } 
-            }
-        }
-    }
-    return -2;
 }
 
 function calculaPosicao(id){
