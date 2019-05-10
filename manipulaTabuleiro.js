@@ -32,6 +32,9 @@ $('#container div.rowT div').click(function(){
         for (let i = 57; i > 0; i = i - 8) {
             var j = i.toString();
             if(document.getElementById(j).textContent == ""){
+
+                let posI = calculaPosicao(j)[0];
+                let posJ = calculaPosicao(j)[1];
                 
                 if(jogadorAtual == 1){
                     setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
@@ -1144,7 +1147,14 @@ function determinarVencedor() {
     return -2;
 }
 
- 
+function calculaPosicao(id){
+    i = (id - 1) / 8;
+    j = (id - 1) % 8;
+    posId = [];
+    posId.push(i);
+    posId.push(j);
+    return posId;
+}
 //  // Função para validar os dados da jogada
 //  function validarJogada(posicaoInicial, posicaFinal, peca)
 //  {
