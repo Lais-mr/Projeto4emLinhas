@@ -21,7 +21,7 @@ class EstadoTabuleiro{
     realizarJogada(jogador, i, j) 
     {
         this.acao = [i,j];
-        matrizTabuleiro[i][j] = jogador;
+        this.matrizTabuleiro[i][j] = jogador;
         return true;     
     }
 
@@ -72,7 +72,7 @@ class EstadoTabuleiro{
         {
             for(let j = 0; j < this.matrizTabuleiro.length; ++j) 
             {
-                clone.matrizTabuleiro[i][j] = matrizTabuleiro[i][j];
+                clone.matrizTabuleiro[i][j] = this.matrizTabuleiro[i][j];
             }
         }
         return clone;
@@ -84,14 +84,14 @@ class EstadoTabuleiro{
         var testadiagonal = 0;
     
     
-        for(let i = 0; i < matrizTabuleiro.length; ++i) 
+        for(let i = 0; i < this.matrizTabuleiro.length; ++i) 
         {
-            for(let j = 0; j < matrizTabuleiro.length; ++j) 
+            for(let j = 0; j < this.matrizTabuleiro.length; ++j) 
             {
                 //verifica se na posicao do tabuleiro existe alguma peca
-                if(matrizTabuleiro[i][j] != 0)
+                if(this.matrizTabuleiro[i][j] != 0)
                 {
-                    jogador = matrizTabuleiro[i][j];
+                    jogador = this.matrizTabuleiro[i][j];
     
                     if(j < 3)
                     {
@@ -99,9 +99,9 @@ class EstadoTabuleiro{
                         {
                             //verifica ganhador na vertical abaixo
                             contador = 3;
-                            for(let z = (i + 1); z < matrizTabuleiro.length; z++)
+                            for(let z = (i + 1); z < this.matrizTabuleiro.length; z++)
                             {
-                                if(matrizTabuleiro[z][j] == jogador)
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -119,7 +119,7 @@ class EstadoTabuleiro{
                             contador = 3;
                             for(let z = (j + 1); z < 4; z++)
                             {
-                                if(matrizTabuleiro[i][z] == jogador)
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -136,9 +136,9 @@ class EstadoTabuleiro{
                             //verifica ganhador na diagonal principal abaixo
                             contador = 3;
                             testadiagonal = (j+1);
-                            for(let z = (i+1); z < matrizTabuleiro.length; z++)
+                            for(let z = (i+1); z < this.matrizTabuleiro.length; z++)
                             {
-                                if(matrizTabuleiro[z][testadiagonal++] == jogador)
+                                if(this.matrizTabuleiro[z][testadiagonal++] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -156,9 +156,9 @@ class EstadoTabuleiro{
                         {
                             //verifica ganhador na vertical abaixo
                             contador = 3;
-                            for(let z = (i + 1); z < matrizTabuleiro.length; z++)
+                            for(let z = (i + 1); z < this.matrizTabuleiro.length; z++)
                             {
-                                if(matrizTabuleiro[z][j] == jogador)
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -176,7 +176,7 @@ class EstadoTabuleiro{
                             contador = 3;
                             for(let z = (i - 1); z >= 0; z--)
                             {
-                                if(matrizTabuleiro[z][j] == jogador)
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -192,9 +192,9 @@ class EstadoTabuleiro{
                             //verifica ganhador na horizontal direita
     
                             contador = 3;
-                            for(let z = (j + 1); z < matrizTabuleiro.length; z++)
+                            for(let z = (j + 1); z < this.matrizTabuleiro.length; z++)
                             {
-                                if(matrizTabuleiro[i][z] == jogador)
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -211,9 +211,9 @@ class EstadoTabuleiro{
     
                             contador = 3;
                             testadiagonal = (j+1);
-                            for(let z = (i+1); z < matrizTabuleiro.length; z++)
+                            for(let z = (i+1); z < this.matrizTabuleiro.length; z++)
                             {
-                                if(matrizTabuleiro[z][testadiagonal++] == jogador)
+                                if(this.matrizTabuleiro[z][testadiagonal++] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -232,7 +232,7 @@ class EstadoTabuleiro{
                             testadiagonal = (j+1);
                             for(let z = (i-1); z >= 0; z--)
                             {
-                                if(matrizTabuleiro[z][testadiagonal++] == jogador)
+                                if(this.matrizTabuleiro[z][testadiagonal++] == jogador)
                                 {
                                     contador--;
                                 }
@@ -248,7 +248,7 @@ class EstadoTabuleiro{
                             for(let z = (i - 1); z >= 0; z--)
                             {
                                 console.log('verifica veritical cima');
-                                if(matrizTabuleiro[z][j] == jogador)
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }
@@ -264,11 +264,11 @@ class EstadoTabuleiro{
                             
                             //verifica ganhador na horizontal direita
                             contador = 3;
-                            for(let z = (j + 1); z < matrizTabuleiro.length; z++)
+                            for(let z = (j + 1); z < this.matrizTabuleiro.length; z++)
                             {
                                 
                                 console.log('verifica horizintal direita');
-                                if(matrizTabuleiro[i][z] == jogador)
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                     console.log(contador);
@@ -290,7 +290,7 @@ class EstadoTabuleiro{
                             for(let z = (i-1); z >= 0; z--)
                             {
                                 console.log('verifica diagonal cima');
-                                if(matrizTabuleiro[z][testadiagonal++] == jogador)
+                                if(this.matrizTabuleiro[z][testadiagonal++] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -310,7 +310,7 @@ class EstadoTabuleiro{
                             //verifica horizontal esquerda
                             contador = 3;
                             for (let z = (j - 1); z >= 0; z--){
-                                if(matrizTabuleiro[i][z] == jogador)
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -325,8 +325,8 @@ class EstadoTabuleiro{
     
                             //verifica horizontal direita
                             contador = 3;
-                            for (let z = (j + 1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[i][z] == jogador)
+                            for (let z = (j + 1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -342,8 +342,8 @@ class EstadoTabuleiro{
                             //verifica diagonal abaixo esquerda
                             contador = 3;
                             testadiagonal = (j-1);
-                            for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[z][testadiagonal--] == jogador)
+                            for (let z = (i+1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[z][testadiagonal--] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -359,8 +359,8 @@ class EstadoTabuleiro{
                             //verifica diagonal abaixo direita
                             contador = 3;
                             testadiagonal = (j+1);
-                            for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[z][testadiagonal++] == jogador)
+                            for (let z = (i+1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[z][testadiagonal++] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -375,8 +375,8 @@ class EstadoTabuleiro{
     
                             //verifica vertical abaixo
                             contador = 3;
-                            for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[z][j] == jogador)
+                            for (let z = (i+1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -392,7 +392,7 @@ class EstadoTabuleiro{
                             //verifica horizontal esquerda
                             contador = 3;
                             for (let z = (j - 1); z >= 0; z--){
-                                if(matrizTabuleiro[i][z] == jogador)
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -407,8 +407,8 @@ class EstadoTabuleiro{
     
                             //verifica horizontal direita
                             contador = 3;
-                            for (let z = (j + 1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[i][z] == jogador)
+                            for (let z = (j + 1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -424,8 +424,8 @@ class EstadoTabuleiro{
                             //verifica diagonal abaixo esquerda
                             contador = 3;
                             testadiagonal = (j-1);
-                            for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[z][testadiagonal--] == jogador)
+                            for (let z = (i+1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[z][testadiagonal--] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -441,8 +441,8 @@ class EstadoTabuleiro{
                             //verifica diagonal abaixo direita
                             contador = 3;
                             testadiagonal = (j+1);
-                            for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[z][testadiagonal++] == jogador)
+                            for (let z = (i+1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[z][testadiagonal++] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -457,8 +457,8 @@ class EstadoTabuleiro{
     
                             //verifica vertical abaixo
                             contador = 3;
-                            for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[z][j] == jogador)
+                            for (let z = (i+1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -474,7 +474,7 @@ class EstadoTabuleiro{
                             //verifica vertical acima
                             contador = 3;
                             for (let z = (i-1); z >= 0; z--){
-                                if(matrizTabuleiro[z][j] == jogador)
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -491,7 +491,7 @@ class EstadoTabuleiro{
                             contador = 3;
                             testadiagonal = (j-1);
                             for (let z = (i-1); z >= 0; z--){
-                                if(matrizTabuleiro[z][testadiagonal--] == jogador)
+                                if(this.matrizTabuleiro[z][testadiagonal--] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -508,7 +508,7 @@ class EstadoTabuleiro{
                             contador = 3;
                             testadiagonal = (j+1);
                             for (let z = (i-1); z >= 0; z--){
-                                if(matrizTabuleiro[z][testadiagonal++] == jogador)
+                                if(this.matrizTabuleiro[z][testadiagonal++] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -525,7 +525,7 @@ class EstadoTabuleiro{
                             contador = 3;
                             for(let z = (i - 1); z >= 0; z--)
                             {
-                                if(matrizTabuleiro[z][j] == jogador)
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -541,9 +541,9 @@ class EstadoTabuleiro{
                             //verifica ganhador na horizontal direita
     
                             contador = 3;
-                            for(let z = (j + 1); z < matrizTabuleiro.length; z++)
+                            for(let z = (j + 1); z < this.matrizTabuleiro.length; z++)
                             {
-                                if(matrizTabuleiro[i][z] == jogador)
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -559,7 +559,7 @@ class EstadoTabuleiro{
                             //verifica horizontal esquerda
                             contador = 3;
                             for (let z = (j - 1); z >= 0; z--){
-                                if(matrizTabuleiro[i][z] == jogador)
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -576,7 +576,7 @@ class EstadoTabuleiro{
                             contador = 3;
                             testadiagonal = (j-1);
                             for (let z = (i-1); z >= 0; z--){
-                                if(matrizTabuleiro[z][testadiagonal--] == jogador)
+                                if(this.matrizTabuleiro[z][testadiagonal--] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -593,7 +593,7 @@ class EstadoTabuleiro{
                             contador = 3;
                             testadiagonal = (j+1);
                             for (let z = (i-1); z >= 0; z--){
-                                if(matrizTabuleiro[z][testadiagonal++] == jogador)
+                                if(this.matrizTabuleiro[z][testadiagonal++] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -611,7 +611,7 @@ class EstadoTabuleiro{
                             //verifica horizontal esquerda
                             contador = 3;
                             for (let z = (j - 1); z >= 0; z--){
-                                if(matrizTabuleiro[i][z] == jogador)
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -627,8 +627,8 @@ class EstadoTabuleiro{
                             //verifica diagonal abaixo esquerda
                             contador = 3;
                             testadiagonal = (j-1);
-                            for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[z][testadiagonal--] == jogador)
+                            for (let z = (i+1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[z][testadiagonal--] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -643,8 +643,8 @@ class EstadoTabuleiro{
     
                             //verifica vertical abaixo
                             contador = 3;
-                            for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[z][j] == jogador)
+                            for (let z = (i+1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -659,8 +659,8 @@ class EstadoTabuleiro{
                         }else if(i == 3 || i == 4){
                             //verifica vertical abaixo
                             contador = 3;
-                            for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[z][j] == jogador)
+                            for (let z = (i+1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -676,7 +676,7 @@ class EstadoTabuleiro{
                              //verifica vertical acima
                              contador = 3;
                              for (let z = (i-1); z >= 0; z--){
-                                 if(matrizTabuleiro[z][j] == jogador)
+                                 if(this.matrizTabuleiro[z][j] == jogador)
                                  {
                                      contador--;
                                  }else{
@@ -692,7 +692,7 @@ class EstadoTabuleiro{
                              //verifica horizontal esquerda
                             contador = 3;
                             for (let z = (j - 1); z >= 0; z--){
-                                if(matrizTabuleiro[i][z] == jogador)
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -708,8 +708,8 @@ class EstadoTabuleiro{
                             //verifica diagonal abaixo esquerda
                             contador = 3;
                             testadiagonal = (j-1);
-                            for (let z = (i+1); z < matrizTabuleiro.length; z++){
-                                if(matrizTabuleiro[z][testadiagonal--] == jogador)
+                            for (let z = (i+1); z < this.matrizTabuleiro.length; z++){
+                                if(this.matrizTabuleiro[z][testadiagonal--] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -726,7 +726,7 @@ class EstadoTabuleiro{
                             contador = 3;
                             testadiagonal = (j-1);
                             for (let z = (i-1); z >= 0; z--){
-                                if(matrizTabuleiro[z][testadiagonal--] == jogador)
+                                if(this.matrizTabuleiro[z][testadiagonal--] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -743,7 +743,7 @@ class EstadoTabuleiro{
                             contador = 3;
                             testadiagonal = (j-1);
                             for (let z = (i-1); z >= 0; z--){
-                                if(matrizTabuleiro[z][testadiagonal--] == jogador)
+                                if(this.matrizTabuleiro[z][testadiagonal--] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -759,7 +759,7 @@ class EstadoTabuleiro{
                             //verifica horizontal esquerda
                             contador = 3;
                             for (let z = (j - 1); z >= 0; z--){
-                                if(matrizTabuleiro[i][z] == jogador)
+                                if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
                                 }else{
@@ -775,7 +775,7 @@ class EstadoTabuleiro{
                             //verifica vertical acima
                             contador = 3;
                             for (let z = (i-1); z >= 0; z--){
-                                if(matrizTabuleiro[z][j] == jogador)
+                                if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
                                 }else{

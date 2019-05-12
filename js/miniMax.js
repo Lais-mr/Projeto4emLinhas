@@ -20,7 +20,7 @@ class MiniMax{
         let possivelVencedor = estado.determinarVencedor();
         //console.log(possivelVencedor);
         if(possivelVencedor != -2){
-            estado.miniMax(possivelVencedor);
+            estado.miniMax  = possivelVencedor;
             return estado;
         }
 
@@ -57,7 +57,7 @@ class MiniMax{
         let melhor = null;
 
         for (let i = 0; i < novosEstados.length; i++) {
-            filho = novosEstados[i];
+            let filho = novosEstados[i];
 
             possivelMelhor = this.max(filho);
             if(possivelMelhor.miniMax() < min){
