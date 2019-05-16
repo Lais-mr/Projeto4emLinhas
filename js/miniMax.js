@@ -22,33 +22,36 @@ class MiniMax{
         //console.log(possivelVencedor);
         if(possivelVencedor != -2)
         {
-            console.log("Entrei no if");
-            console.log(estado);
+            //console.log("Entrei no if Max");
+            //console.log(estado);
             estado.miniMax  = possivelVencedor;
             return estado;
         }
 
         let novosEstados = [];
-        novosEstados = estado.filhos(2);
-        console.log("Max");
+        novosEstados = estado.filhos(1);
+        //console.log("Max");
         //console.log(novosEstados);
         let max = Number.MIN_VALUE;
+        //console.log("Min-value");
+        //console.log(max);
         let melhor = null;
         for (let i = 0; i < novosEstados.length; i++) 
         {
             let filho = novosEstados[i];
             let possivelMelhor = this.min(filho);
-            console.log(possivelMelhor.miniMax);
-            if(possivelMelhor.miniMax> max)
+            //console.log("Valor minMax");
+            //console.log(possivelMelhor.miniMax);
+            if(possivelMelhor.miniMax      > max)
             {
                 melhor = possivelMelhor;
                 max = possivelMelhor.miniMax;
             }          
         }
         estado.melhorAcao = melhor;
+        console.log("Max - estado");
+        console.log(max);
         estado.miniMax = max;
-        console.log("Não entrei no if");
-        console.log(estado);
         return estado;
     }
 
@@ -58,17 +61,19 @@ class MiniMax{
         let possivelVencedor  = estado.determinarVencedor();  
         if(possivelVencedor != -2)
         {
-            console.log("Entrei no if");
-            console.log(estado);
+            //console.log("Entrei no if Min");
+            //console.log(estado);
             estado.miniMax = possivelVencedor;
             return estado;
         }      
 
         let novosEstados = [];
-        novosEstados = estado.filhos(1);
-        console.log("Min");
+        novosEstados = estado.filhos(-1);
+        //console.log("Min");
         // console.log(novosEstados);
         let min = Number.MAX_VALUE;
+        //console.log("Max-value");
+        //console.log(min);
         let melhor = null;
 
         for (let i = 0; i < novosEstados.length; i++)
@@ -76,7 +81,8 @@ class MiniMax{
             let filho = novosEstados[i];
 
             let possivelMelhor = this.max(filho);
-            console.log(possivelMelhor.miniMax);
+            //console.log("Valor minMax");
+            //console.log(possivelMelhor.miniMax);
             if(possivelMelhor.miniMax < min)
             {
                 melhor = possivelMelhor;
@@ -86,9 +92,9 @@ class MiniMax{
         }
 
         estado.melhorAcao = melhor;
+        console.log("Min - estado");
+        console.log(min);
         estado.miniMax = min;
-        console.log("Não entrei no if");
-        console.log(estado);
         return estado;
 
     }
