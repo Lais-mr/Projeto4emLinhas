@@ -20,9 +20,29 @@ class EstadoTabuleiro{
 
     realizarJogada(jogador, i, j) 
     {
+        // console.log(jogador);
+        // console.log(i);
+        // console.log("entrei realizaJogada");
+        if(i != 7)
+        {
+            if(this.matrizTabuleiro[i][j] != 0 || this.matrizTabuleiro[i + 1][j] == 0)
+            {
+                return false;
+            }
+        }
+        else if(i == 7)
+        {
+            if(this.matrizTabuleiro[i][j] != 0)
+            {
+                return false;
+            }
+        }
+
         this.acao = [i,j];
         this.matrizTabuleiro[i][j] = jogador;
-        return true;     
+        return true; 
+
+            
     }
 
     set melhorAcao(melhorAcao) {
@@ -56,8 +76,12 @@ class EstadoTabuleiro{
             for(let j =0; j < this.matrizTabuleiro.length; j++) 
             {
                 let e = this.clonar();
+                // console.log("Clone");
+                // console.log(e.matrizTabuleiro);
                 if(e.realizarJogada(jogador, i, j)) 
                 {
+                    // console.log("Realiza jogada");
+                    // console.log(e.matrizTabuleiro);
                     filhos.push(e);
                 }
             }
@@ -241,13 +265,13 @@ class EstadoTabuleiro{
                         }
                         else
                         {
-                            console.log('entrou');
+                            //console.log('entrou');
                             //console.log(jogador);
                             //verifica ganhador na vertical a cima
                             contador = 3;
                             for(let z = (i - 1); z >= 0; z--)
                             {
-                                console.log('verifica veritical cima');
+                                //console.log('verifica veritical cima');
                                 if(this.matrizTabuleiro[z][j] == jogador)
                                 {
                                     contador--;
@@ -267,11 +291,11 @@ class EstadoTabuleiro{
                             for(let z = (j + 1); z < this.matrizTabuleiro.length; z++)
                             {
                                 
-                                console.log('verifica horizintal direita');
+                                //console.log('verifica horizintal direita');
                                 if(this.matrizTabuleiro[i][z] == jogador)
                                 {
                                     contador--;
-                                    console.log(contador);
+                                    //console.log(contador);
                                 }else{
                                     break;
                                 }
@@ -289,7 +313,7 @@ class EstadoTabuleiro{
                             
                             for(let z = (i-1); z >= 0; z--)
                             {
-                                console.log('verifica diagonal cima');
+                                //console.log('verifica diagonal cima');
                                 if(this.matrizTabuleiro[z][testadiagonal++] == jogador)
                                 {
                                     contador--;

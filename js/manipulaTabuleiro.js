@@ -8,7 +8,8 @@ var jogadorAtual = 1 // quem comeca jogar é sempre o X
 var objEstado = new EstadoTabuleiro();
 
 // Função para realizar as jogas quando ocorrer um click
-$('#container div.rowT div').click(function(){
+$('.container div.rowT div').click(function(){
+    console.log("entrei click");
 
     // Captura o ID da posição da peça
     var id = $(this).attr('id');
@@ -21,6 +22,7 @@ $('#container div.rowT div').click(function(){
 
                 let posI = calculaPosicao(j)[0];
                 let posJ = calculaPosicao(j)[1];
+                
                 
                 if(jogadorAtual == 1){
                     setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
@@ -227,6 +229,8 @@ $('#container div.rowT div').click(function(){
             if(document.getElementById(j).textContent == ""){
                 let posI = calculaPosicao(j)[0];
                 let posJ = calculaPosicao(j)[1];
+                console.log(posI);
+                console.log(posJ);
                 
                 if(jogadorAtual == 1){
                     setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
@@ -308,9 +312,8 @@ function printaMatriz(){
     }
     
 }
-
 function calculaPosicao(id){
-    i = (id - 1) / 8;
+    i = Math.trunc((id - 1) / 8);
     j = (id - 1) % 8;
     posId = [];
     posId.push(i);
