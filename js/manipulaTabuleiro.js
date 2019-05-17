@@ -4,6 +4,11 @@ var jogadorAtual = -1 // quem comeca jogar é sempre o X
 //JOGADOR 1 = O -> IA
 
 
+//let estado = new EstadoTabuleiro();
+//let novosEstados = estado.filhos(-1)[0].filhos(1)[0].filhos(-1);
+
+//console.log(novosEstados);
+
 //Objeto EstadoTabuleiro
 var objEstado = new EstadoTabuleiro();
 
@@ -28,15 +33,16 @@ $('.container div.rowT div').click(function(){
                     setPosicaoJogador(i,jogadorAtual); // coloca o jogador no tabuleiro
                     objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual; // seta a matriz para verificar se houve algum ganhador
                     let e = objEstado.clonar();
-                    // console.log("Clona estado");
+                     console.log("Clona estado");
                     // console.log(e);
                     let ia = new MiniMax(e);
-                    let m = ia.melhorJogada();
+
                     jogadorAtual = 1;
+                    let m = ia.melhorJogada();
                     objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
                     let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
                     setPosicaoJogador(calculaId,jogadorAtual);
-                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    //objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     jogadorAtual = -1;
 
                 }else{
@@ -60,12 +66,13 @@ $('.container div.rowT div').click(function(){
                     objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     let e = objEstado.clonar();
                     let ia = new MiniMax(e);
-                    let m = ia.melhorJogada();
+
                     jogadorAtual = 1;
+                    let m = ia.melhorJogada();
                     objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
                     let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
                     setPosicaoJogador(calculaId,jogadorAtual);
-                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    //objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     jogadorAtual = -1;
 
                 }else{
@@ -89,12 +96,13 @@ $('.container div.rowT div').click(function(){
                     objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     let e = objEstado.clonar();
                     let ia = new MiniMax(e);
-                    let m = ia.melhorJogada();
+
                     jogadorAtual = 1;
+                    let m = ia.melhorJogada();
                     objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
                     let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
                     setPosicaoJogador(calculaId,jogadorAtual);
-                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    //objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     jogadorAtual = -1;
 
                 }else{
@@ -118,12 +126,13 @@ $('.container div.rowT div').click(function(){
                     objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     let e = objEstado.clonar();
                     let ia = new MiniMax(e);
-                    let m = ia.melhorJogada();
+
                     jogadorAtual = 1;
+                    let m = ia.melhorJogada();
                     objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
                     let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
                     setPosicaoJogador(calculaId,jogadorAtual);
-                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    //objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     jogadorAtual = -1;
 
                 }else{
@@ -147,12 +156,13 @@ $('.container div.rowT div').click(function(){
                     objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     let e = objEstado.clonar();
                     let ia = new MiniMax(e);
-                    let m = ia.melhorJogada();
+
                     jogadorAtual = 1;
+                    let m = ia.melhorJogada();
                     objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
                     let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
                     setPosicaoJogador(calculaId,jogadorAtual);
-                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    //objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     jogadorAtual = -1;
 
                 }else{
@@ -176,12 +186,13 @@ $('.container div.rowT div').click(function(){
                     objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     let e = objEstado.clonar();
                     let ia = new MiniMax(e);
-                    let m = ia.melhorJogada();
+
                     jogadorAtual = 1;
+                    let m = ia.melhorJogada();
                     objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
                     let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
                     setPosicaoJogador(calculaId,jogadorAtual);
-                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    //objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     jogadorAtual = -1;
 
                 }else{
@@ -205,12 +216,13 @@ $('.container div.rowT div').click(function(){
                     objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     let e = objEstado.clonar();
                     let ia = new MiniMax(e);
-                    let m = ia.melhorJogada();
+
                     jogadorAtual = 1;
+                    let m = ia.melhorJogada();
                     objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
                     let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
                     setPosicaoJogador(calculaId,jogadorAtual);
-                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    //objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     jogadorAtual = -1;
 
                 }else{
@@ -237,12 +249,13 @@ $('.container div.rowT div').click(function(){
                     objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     let e = objEstado.clonar();
                     let ia = new MiniMax(e);
-                    let m = ia.melhorJogada();
+
                     jogadorAtual = 1;
+                    let m = ia.melhorJogada();
                     objEstado.realizarJogada(jogadorAtual,m[0],m[1]);
                     let calculaId = (m[0]*(objEstado.matrizTabuleiro.length)) + (m[1] + 1);
                     setPosicaoJogador(calculaId,jogadorAtual);
-                    objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
+                    //objEstado.matrizTabuleiro[posI][posJ] = jogadorAtual;
                     jogadorAtual = -1;
 
                 }else{

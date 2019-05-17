@@ -23,8 +23,10 @@ class EstadoTabuleiro{
         // console.log(jogador);
         // console.log(i);
         // console.log("entrei realizaJogada");
+        
         if(i != 7)
         {
+            
             if(this.matrizTabuleiro[i][j] != 0 || this.matrizTabuleiro[i + 1][j] == 0)
             {
                 return false;
@@ -71,6 +73,7 @@ class EstadoTabuleiro{
     filhos(jogador) 
     {
         let filhos = [];
+        let acoes = [];
         for(let i = 0; i < this.matrizTabuleiro.length; i++) 
         {
             for(let j =0; j < this.matrizTabuleiro.length; j++) 
@@ -85,7 +88,7 @@ class EstadoTabuleiro{
                     filhos.push(e);
                 }
             }
-        } 
+        }
         return filhos;
     }
 
@@ -106,7 +109,16 @@ class EstadoTabuleiro{
         var jogador = -1; 
         var contador = 3; // variavel utilizada para contar peças iguais
         var testadiagonal = 0;
-    
+        let verificaLinha0 = 0;
+        for (let i = 0; i < this.matrizTabuleiro.length; i++) { 
+            if(this.matrizTabuleiro[0][i] != 0){
+                verificaLinha0++;
+            }
+        }
+
+        if(verificaLinha0 == 8){
+            return -3;
+        }
     
         for(let i = 0; i < this.matrizTabuleiro.length; ++i) 
         {
@@ -816,6 +828,7 @@ class EstadoTabuleiro{
                 }
             }
         }
+
         return -2;
     }
 }
