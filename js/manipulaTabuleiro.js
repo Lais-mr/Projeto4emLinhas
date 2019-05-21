@@ -269,19 +269,6 @@ $('.container div.rowT div').click(function(){
     }
     // Uma hora temos que limpar o storaged
     
-    //printaMatriz();
-    //  var vencedor = determinarVencedor();
-    //  console.log(vencedor);
-    // if(vencedor == 1)
-    // {
-    //      console.log('Jogador 1');
-    //      //alertify.alert('Vencedor', 'Jogador'.vencedor);
-    // }
-    //  else if(vencedor == 2){
-    //      console.log('Jogador 2');
-    //      //alertify.alert('Vencedor', 'Jogador'.vencedor);
-    // }
-    
 
  })
  
@@ -289,15 +276,12 @@ $('.container div.rowT div').click(function(){
  function setPosicaoJogador(id, jogador) {
     localStorage.setItem("id", id);
     if(jogador == -1){
-        // $('#'+id).text('&#9675');
         $('#'+id).text('X');
        localStorage.setItem("jogador", 'X');
     }else {
-        // $('#'+id).text('&#9634');
         $('#'+id).text('O');
        localStorage.setItem("jogador", 'O');
     }
-    
 
  }
  
@@ -345,11 +329,3 @@ function calculaPosicao(id){
 //      }
 //    }
 //  }
-
-// console.log("---------------")
-
-// let pai = new EstadoTabuleiro();
-// let filhos = pai.filhos(2);
-
-// console.log(pai);
-// console.log(filhos);

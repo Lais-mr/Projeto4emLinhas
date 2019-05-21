@@ -8,7 +8,7 @@ class MiniMax{
     }
 
     minimax(estado){
-        console.log(estado);
+        console.log(estado.matrizTabuleiro);
         let melhorJogada = this.max(estado, 1);
         return melhorJogada.melhorAcao;
 
@@ -27,12 +27,14 @@ class MiniMax{
                 estado.miniMax = 0;
                 return estado;
             }
-            //console.log('Entrei aqui max')
+
             estado.miniMax  = possivelVencedor;
             return estado;
         }
 
-        if(nivel == 2){
+        if(nivel == 5){
+            estado.miniMax = estado.contaPeca();
+            //console.log(estado.miniMax);
             return estado;
         }
 
@@ -87,7 +89,9 @@ class MiniMax{
             return estado;
         }
 
-        if(nivel == 2){
+        if(nivel == 5){
+            estado.miniMax = estado.contaPeca();
+            //console.log(estado.miniMax);
             return estado;
         }
 
@@ -95,7 +99,7 @@ class MiniMax{
         novosEstados = estado.filhos(-1);
         //console.log("min: " + nivel + " " + novosEstados.length);
 
-        let min = Number.MAX_VALUE;
+        let min = 10;
         let melhor = null;
         // console.log('Quantidade de filhos');
         // console.log(novosEstados.length);
@@ -121,7 +125,12 @@ class MiniMax{
     
         }
 
-        estado.melhorAcao = melhor;
+        if(estado.melhorAcao[0] == -1 && estado.melhorAcao[1] == -1){
+            estado.melhorAcao = melhor.acao;
+        }else{
+            estado.melhorAcao = melhor.melhorAcao;
+        }
+        
         // console.log("Min - estado");
         // console.log(min);
         estado.miniMax = min;
