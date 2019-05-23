@@ -8,10 +8,8 @@ class MiniMax{
     }
 
     minimax(estado){
-        console.log(estado.matrizTabuleiro);
         let melhorJogada = this.max(estado, 1);
         return melhorJogada.melhorAcao;
-
     }
 
     melhorJogada(){
@@ -32,9 +30,8 @@ class MiniMax{
             return estado;
         }
 
-        if(nivel == 5){
+        if(nivel == 6){
             estado.miniMax = estado.contaPeca();
-            //console.log(estado.miniMax);
             return estado;
         }
 
@@ -48,7 +45,6 @@ class MiniMax{
 
             if(possivelMelhor.miniMax > max)
             {
-                //console.log(melhor);
                 melhor = possivelMelhor;
                 max = possivelMelhor.miniMax;
             }
@@ -68,9 +64,7 @@ class MiniMax{
         }else{
             estado.melhorAcao = melhor.melhorAcao;
         }
-        
-        // console.log("Max - estado");
-        // console.log(max);
+
         estado.miniMax = max;
         return estado;
     }
@@ -84,25 +78,21 @@ class MiniMax{
                 estado.miniMax = 0;
                 return estado;
             }
-            //console.log('Entrei aqui min')
+
             estado.miniMax = possivelVencedor;
             return estado;
         }
 
-        if(nivel == 5){
+        if(nivel == 6){
             estado.miniMax = estado.contaPeca();
-            //console.log(estado.miniMax);
             return estado;
         }
 
         let novosEstados = [];
         novosEstados = estado.filhos(-1);
-        //console.log("min: " + nivel + " " + novosEstados.length);
-
         let min = 10;
         let melhor = null;
-        // console.log('Quantidade de filhos');
-        // console.log(novosEstados.length);
+
         for (let i = 0; i < novosEstados.length; i++)
         {
             let filho = novosEstados[i];
@@ -131,8 +121,6 @@ class MiniMax{
             estado.melhorAcao = melhor.melhorAcao;
         }
         
-        // console.log("Min - estado");
-        // console.log(min);
         estado.miniMax = min;
         return estado;
 
