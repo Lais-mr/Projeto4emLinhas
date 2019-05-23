@@ -30,7 +30,7 @@ class MiniMax{
             return estado;
         }
 
-        if(nivel == 6){
+        if(nivel == 7){
             estado.miniMax = estado.contaPeca();
             return estado;
         }
@@ -83,8 +83,10 @@ class MiniMax{
             return estado;
         }
 
-        if(nivel == 6){
+        if(nivel == 7){
             estado.miniMax = estado.contaPeca();
+            
+            //console.log("Estado: " +estado.matrizTabuleiro);
             return estado;
         }
 

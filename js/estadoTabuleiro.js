@@ -918,7 +918,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -938,7 +938,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -959,7 +959,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -983,7 +983,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if(jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1003,7 +1003,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1023,7 +1023,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1044,7 +1044,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1066,7 +1066,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1091,7 +1091,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1111,7 +1111,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1133,7 +1133,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1160,7 +1160,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1179,7 +1179,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1199,7 +1199,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1219,7 +1219,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1238,7 +1238,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1261,7 +1261,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1280,7 +1280,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1300,7 +1300,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1320,7 +1320,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1339,7 +1339,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1358,7 +1358,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1378,7 +1378,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1398,7 +1398,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1422,7 +1422,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1442,7 +1442,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1461,7 +1461,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1481,7 +1481,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1501,7 +1501,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1528,7 +1528,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1548,7 +1548,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1567,7 +1567,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1590,7 +1590,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1609,7 +1609,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1628,7 +1628,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1648,7 +1648,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1668,7 +1668,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){ 
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1692,7 +1692,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1711,7 +1711,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1730,7 +1730,7 @@ class EstadoTabuleiro{
                                         contIA.push(cont);
                                         cont = 0;
                                     }
-                                    else{
+                                    else if (jogador == -1){
                                         contUsuario.push(cont);
                                         cont = 0;
                                     }
@@ -1756,6 +1756,9 @@ class EstadoTabuleiro{
             return (b - a);
         
         });
+
+        //console.log("IA " + contIA);
+        //console.log("Usuario " + contUsuario);
 
         //Se o valor de numero de pecas em sequencia da IA for maior que o do usuario
         if(contIA[0] >= contUsuario[0])
