@@ -276,10 +276,13 @@ $('.container div.rowT div').click(function(){
  function setPosicaoJogador(id, jogador) {
     localStorage.setItem("id", id);
     if(jogador == -1){
-        $('#'+id).text('X');
-       localStorage.setItem("jogador", 'X');
+        $('#'+id).text('.');
+        // console.log("id"+id)
+        document.getElementById(id).style.backgroundColor = '#21409a';
+        localStorage.setItem("jogador", 'X');
     }else {
-        $('#'+id).text('O');
+        $('#'+id).text('.');
+        document.getElementById(id).style.backgroundColor = '#da3a2a';
        localStorage.setItem("jogador", 'O');
     }
 
