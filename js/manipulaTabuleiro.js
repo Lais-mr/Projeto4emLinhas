@@ -8,7 +8,8 @@ var objEstado = new EstadoTabuleiro();
 
 // Função para realizar as jogas quando ocorrer um click
 $('.container div.rowT div').click(function(){
-
+    console.log(localStorage.getItem('nivel'));
+    
     // Captura o ID da posição da peça
     var id = $(this).attr('id');
 
