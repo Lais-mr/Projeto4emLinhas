@@ -21,13 +21,13 @@ window.addEventListener("load", function(){
         }else{
             if(nivelEscolhido == 3){
                 localStorage.setItem("nivel",nivelEscolhido);
-                window.open('tabuleiro.html','janela');
+                window.location = 'tabuleiro.html';
             }else if(nivelEscolhido == 2){
                 localStorage.setItem("nivel",nivelEscolhido);
-                window.open('tabuleiro.html','janela');
+                window.location = 'tabuleiro.html';
             }else if(nivelEscolhido == 1){
                 localStorage.setItem("nivel",nivelEscolhido);
-                window.open('tabuleiro.html','janela');
+                window.location = 'tabuleiro.html';
             }
         }
 
